@@ -1,9 +1,4 @@
-/ Tables Created in MySQL Workbench to /
-
-
-/* ------------------------------ */
-/* TABLE CREATION         */
-/* ------------------------------ */
+Tables Created in MySQL Workbench
 
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
@@ -14,9 +9,9 @@ CREATE TABLE employees (
     position VARCHAR(50),
     salary INT,
     hire_date DATE,
-    bonus INT,              -- Nullable: perfect for COALESCE
-    commission_pct DECIMAL(4, 2), -- Nullable: perfect for COALESCE
-    manager_id INT          -- Nullable: perfect for IS NULL
+    bonus INT,              
+    commission_pct DECIMAL(4, 2), 
+    manager_id INT          
 );
 
 CREATE TABLE products (
@@ -26,7 +21,7 @@ CREATE TABLE products (
     unit_price DECIMAL(10, 2),
     stock_quantity INT,
     supplier_id INT,
-    discontinued_date DATE  -- Nullable: perfect for COALESCE
+    discontinued_date DATE  
 );
 
 CREATE TABLE sales (
@@ -35,12 +30,10 @@ CREATE TABLE sales (
     employee_id INT,
     sale_date DATE,
     quantity_sold INT,
-    discount_code VARCHAR(20) -- Nullable: perfect for COALESCE
+    discount_code VARCHAR(20) 
 );
 
-/* ------------------------------ */
-/* SAMPLE DATA            */
-/* ------------------------------ */
+
 
 INSERT INTO employees VALUES
 (101, 'Ana', 'Smith', 'ana.smith@web.com', 'Sales', 'Sales Manager', 90000, '2022-01-15', 10000, 0.15, NULL),
@@ -59,7 +52,7 @@ INSERT INTO products VALUES
 (205, 'Laptop Pro 15"', 'Computers', 1499.99, 30, 304, NULL),
 (206, 'Vintage Record Player', 'Electronics', 249.00, 0, 301, '2024-01-01'),
 (207, 'Premium Dog Food', 'Pets', 55.50, 80, 305, NULL),
-(208, 'Electric Kettle', 'Appliances', 39.99, 110, NULL, NULL); -- No supplier, not discontinued
+(208, 'Electric Kettle', 'Appliances', 39.99, 110, NULL, NULL); 
 
 INSERT INTO sales VALUES
 (1, 201, 103, '2024-10-01', 2, 'FALL10'),
