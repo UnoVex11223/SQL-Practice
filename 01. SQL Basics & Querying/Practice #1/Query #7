@@ -1,0 +1,10 @@
+Sort with NULLs Last: List all products, showing their product_name and discontinued_date. Order them by the discontinued_date from oldest to newest, but make all the active products (with NULL dates) appear last in the list. (Hint: Use COALESCE in the ORDER BY clause to assign a "fake" future date, like '9999-12-31', to all NULLs).
+
+Solution:
+
+SELECT
+product_name,
+discontinued_date
+FROM products
+ORDER BY COALESCE(discontinued_date, CAST('9999-12-31' AS DATE)) ASC
+
