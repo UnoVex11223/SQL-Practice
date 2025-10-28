@@ -1,0 +1,10 @@
+Product Status Report: List all product_name and their discontinued_date. If the discontinued_date is NULL, display the text 'Active'. 
+
+Solution:
+
+SELECT 
+    product_name,
+    COALESCE(CAST(discontinued_date AS CHAR), 'Active') AS discontinued_date
+FROM products;
+
+
