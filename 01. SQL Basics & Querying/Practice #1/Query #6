@@ -1,0 +1,8 @@
+Full Variable Pay: Calculate each employee's 'Total Variable Pay'. This is their bonus + (salary * commission_pct). The issue is that both bonus and commission_pct can be NULL. Use COALESCE to treat NULL values as 0 before performing the calculation.
+
+Solution:
+
+SELECT 
+employee_id,
+COALESCE(bonus, 0) + (salary * COALESCE(commission_pct, 0)) AS total_variable_pay
+FROM employees
