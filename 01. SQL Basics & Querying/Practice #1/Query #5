@@ -1,0 +1,9 @@
+Multi-Level Default: Create a 'Priority Contact' for each employee. This should be their email if it exists. If email is NULL, it should be their manager_id (cast as VARCHAR). If both are NULL, it should be the text 'Report to HR'.
+
+Solution:
+
+SELECT 
+employee_id,
+COALESCE(email, CAST(manager_id AS CHAR), 'Report to HR') AS priority_contact
+FROM employees
+
