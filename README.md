@@ -92,14 +92,46 @@ Useful functions for data cleaning, transformation, and manipulation.
 
 * **Conditional Logic:**
     * `CASE ... WHEN ... THEN ... END`: Implementing if/then logic in SQL.
+* **Pivoting:**
+    * `PIVOT` / `UNPIVOT`: (SQL Server)
+    * `CASE` statement pivoting: (The traditional, cross-database method).
 * **Date/Time Functions:**
     * `EXTRACT()`, `DATE_PART()`: Getting parts of a date (day, month, year).
     * `DATE_TRUNC()`: Truncating dates to a specific precision.
     * `INTERVAL`: Performing date arithmetic.
 * **String Functions:**
     * `CONCAT()`, `||`: Combining strings.
-    * `SUBSTRING()`: Extracting parts of a string.
+    * `SUBSTRING()`, `LEFT()`, `RIGHT()`: Extracting parts of a string.
     * `TRIM()`, `LOWER()`, `UPPER()`: Cleaning strings.
     * `REPLACE()`: Replacing parts of a string.
 * **Casting:**
     * `CAST(...)` or `::`: Converting data types.
+
+### 09-Procedural-SQL-and-Automation
+
+Writing programmatic logic that lives in the database.
+
+* `CREATE PROCEDURE`: Stored Procedures for encapsulating multi-step logic.
+* `CREATE FUNCTION`: User-Defined Functions (UDFs) for reusable transformations.
+* Variables, loops, and control flow (e.g., `IF`/`ELSE`, `WHILE` in T-SQL or PL/pgSQL).
+
+### 10-Performance-and-Optimization
+
+Writing queries that run efficiently is a critical DE skill.
+
+* **Indexing:**
+    * `CREATE INDEX`: How, when, and what to index.
+    * Index Types: B-Tree, Clustered vs. Non-Clustered.
+* **Query Planning:**
+    * `EXPLAIN` / `EXPLAIN ANALYZE`: Reading and understanding query plans.
+* **Table Partitioning:** Strategies for splitting large tables for performance.
+* **Materialized Views:** Pre-calculating and storing query results.
+* Query Anti-Patterns: Identifying and fixing inefficient queries (e.g., `SELECT *`, correlated subqueries).
+
+### 12-Transactions-and-Data-Control
+
+Ensuring data integrity and managing permissions.
+
+* `BEGIN`, `COMMIT`, `ROLLBACK`: Transaction control for data integrity.
+* `GRANT` / `REVOKE`: User permissions and access control.
+* Isolation Levels: Understanding how transactions interact.
