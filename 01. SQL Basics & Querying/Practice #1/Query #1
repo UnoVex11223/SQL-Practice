@@ -1,0 +1,8 @@
+Calculate Total Compensation: List all employees' first_name and their total compensation. Total compensation is salary + bonus. The problem is, salary + NULL is NULL. Use COALESCE to treat a NULL bonus as 0.
+
+Solution: 
+SELECT 
+    first_name, 
+    (salary + COALESCE(bonus, 0)) AS total_compensation
+FROM 
+    sys.employees;
