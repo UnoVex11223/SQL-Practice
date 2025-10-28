@@ -1,0 +1,8 @@
+Employee Contact List: Create a contact list for all employees. Show employee_id and a single contact column. This contact column should be the email. If the email is NULL, use the employee_id (cast as a VARCHAR/TEXT) as the contact.
+
+Solution:
+
+SELECT 
+employee_id,
+COALESCE(email, CAST(employee_id AS CHAR)) AS contact
+FROM EMPLOYEES
