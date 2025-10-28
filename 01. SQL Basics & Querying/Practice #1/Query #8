@@ -1,0 +1,8 @@
+Clean Sales Report: From the sales table, show the sale_id and the discount_code. If the discount_code is NULL, display 'No Discount Used'.
+
+Solution:
+
+SELECT 
+sale_id,
+COALESCE(discount_code, 'No Discount Used') AS discount_code
+FROM sales
