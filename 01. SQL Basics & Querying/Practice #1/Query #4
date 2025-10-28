@@ -1,0 +1,9 @@
+Find "Default" Supplier: Find all products where the supplier_id is considered 0. For this query, any product with a NULL supplier_id should be treated as having a supplier_id of 0.
+
+Solution:
+
+SELECT 
+product_id, 
+product_name
+FROM products
+WHERE COALESCE(supplier_id, 0) = 0
