@@ -1,1 +1,60 @@
+CREATE TABLE employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    email VARCHAR(100),
+    department VARCHAR(50),
+    position VARCHAR(50),
+    salary INT,
+    hire_date DATE,
+    bonus INT,              
+    commission_pct DECIMAL(4, 2), 
+    manager_id INT          
+);
 
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    unit_price DECIMAL(10, 2),
+    stock_quantity INT,
+    supplier_id INT,
+    discontinued_date DATE  
+);
+
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY,
+    product_id INT,
+    employee_id INT,
+    sale_date DATE,
+    quantity_sold INT,
+    discount_code VARCHAR(20) 
+);
+
+INSERT INTO employees VALUES
+(101, 'Ana', 'Smith', 'ana.smith@web.com', 'Sales', 'Sales Manager', 90000, '2022-01-15', 10000, 0.15, NULL),
+(102, 'Ben', 'Gray', 'ben.gray@web.com', 'Engineering', 'Software Engineer', 105000, '2021-06-01', 5000, NULL, 101),
+(103, 'Clara', 'Jones', 'clara.jones@web.com', 'Sales', 'Sales Associate', 65000, '2023-03-10', 3000, 0.10, 101),
+(104, 'David', 'Lee', 'david.lee@web.com', 'Marketing', 'Marketing Lead', 75000, '2022-11-20', NULL, 0.05, 107),
+(105, 'Eva', 'Chen', 'eva.chen@web.com', 'Engineering', 'Data Scientist', 120000, '2021-09-30', 7000, NULL, 107),
+(106, 'Frank', 'Lin', NULL, 'Engineering', 'DevOps Engineer', 95000, '2023-07-01', NULL, NULL, 102),
+(107, 'Grace', 'Kim', 'grace.kim@web.com', 'Management', 'Director', 150000, '2020-02-18', 20000, NULL, NULL);
+
+INSERT INTO products VALUES
+(201, 'Wireless Mouse', 'Electronics', 49.99, 150, 301, NULL),
+(202, 'Mechanical Keyboard', 'Electronics', 129.99, 75, 301, NULL),
+(203, 'Organic Green Tea', 'Groceries', 15.00, 200, 302, NULL),
+(204, 'Running Shoes', 'Apparel', 89.90, 120, 303, NULL),
+(205, 'Laptop Pro 15"', 'Computers', 1499.99, 30, 304, NULL),
+(206, 'Vintage Record Player', 'Electronics', 249.00, 0, 301, '2024-01-01'),
+(207, 'Premium Dog Food', 'Pets', 55.50, 80, 305, NULL),
+(208, 'Electric Kettle', 'Appliances', 39.99, 110, NULL, NULL); -- No supplier, not discontinued
+
+INSERT INTO sales VALUES
+(1, 201, 103, '2024-10-01', 2, 'FALL10'),
+(2, 203, 103, '2024-10-01', 5, NULL),
+(3, 205, 101, '2024-10-02', 1, 'SAVE100'),
+(4, 202, 103, '2024-10-03', 1, NULL),
+(5, 201, 104, '2024-10-03', 10, 'BULKBUY'),
+(6, 207, 103, '2024-10-04', 3, NULL),
+(7, 208, 101, '2024-10-04', 1, NULL);
