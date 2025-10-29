@@ -1,0 +1,10 @@
+Find all products that are not in the 'Electronics' or 'Apparel' categories AND have a stock quantity that is either less than 80 or greater than 180.
+
+Solution:
+
+SELECT
+product_id,
+product_name
+FROM products
+WHERE (category NOT IN ('Electronics', 'Apparel')) AND ((stock_quantity < 80) OR (stock_quantity > 180))
+
