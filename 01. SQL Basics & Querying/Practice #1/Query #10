@@ -1,0 +1,11 @@
+Find all employees who are either in the 'Sales' department and earn over $70,000, OR are in the 'Engineering' department and were hired after 2022-01-01.
+
+Solution:
+
+SELECT 
+first_name, 
+employee_id 
+FROM employees
+WHERE ((department = 'Sales') AND (salary > 70000)) 
+OR ((department = 'Engineering') AND (hire_date > '2022-01-01'))
+
