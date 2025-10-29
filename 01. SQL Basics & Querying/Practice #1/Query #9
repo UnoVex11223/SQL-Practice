@@ -1,0 +1,10 @@
+Find all employees in the 'Engineering' department.
+
+Solution:
+
+SELECT 
+employee_id, 
+first_name, 
+last_name 
+FROM employees
+WHERE department = 'Engineering'
