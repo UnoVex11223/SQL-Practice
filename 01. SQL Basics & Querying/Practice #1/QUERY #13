@@ -1,0 +1,10 @@
+List all employees, sorted first by department alphabetically (A-Z), and then by salary
+
+Solution:
+
+SELECT 
+employee_id, 
+department, 
+salary 
+FROM employees
+ORDER BY department, salary DESC
