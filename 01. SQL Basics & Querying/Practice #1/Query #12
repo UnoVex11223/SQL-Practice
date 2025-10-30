@@ -1,0 +1,9 @@
+Find all employees whose first_name starts with 'A' AND whose last_name has exactly 4 letters.
+
+Solution:
+
+SELECT 
+first_name, 
+last_name 
+FROM Employees
+WHERE (first_name LIKE 'A%') AND (last_name LIKE '____')
