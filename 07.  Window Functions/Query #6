@@ -1,0 +1,9 @@
+Show a list of all sales, ordered by sale_date, with a running total of the sale_amount for the entire company.
+
+Solution:
+
+SELECT
+sale_id,
+sale_date,
+SUM(sale_amount) OVER(ORDER BY sale_date) AS running_total_sales
+FROM sales
