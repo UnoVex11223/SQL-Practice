@@ -1,1 +1,30 @@
+Assume the sales table has several years of data. 
+You want to see total sales by department for each year, and in the next column, the total sales for that same department from the previous year. 
+(Hint: You'll need a CTE to aggregate sales by department/year first, then use
 
+Solution:
+
+WITH total_sales_by_dept_year AS (
+  SELECT 
+    department, 
+    EXTRACT(YEAR FROM sale_date) as sale_year,
+    SUM(sale_amount) AS total_sales
+  FROM employees e
+  INNER JOIN sales s ON e.emp_id = s.emp_id
+  GROUP BY 
+    department, 
+    EXTRACT(YEAR FROM sale_date)
+)
+
+SELECT
+  department,
+  sale_year,
+  total_sales,
+  LAG(total_sales, 1, 0) OVER (
+    PARTITION BY department 
+    ORDER BY sale_year      
+  ) AS previous_year_sales
+FROM total_sales_by_dept_year
+ORDER BY 
+  department, 
+  sale_year;
