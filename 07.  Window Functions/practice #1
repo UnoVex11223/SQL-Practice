@@ -1,1 +1,10 @@
+List all employees and their rank based on salary from highest to lowest across the entire company.
 
+Solution:
+
+SELECT 
+first_name,
+last_name,
+salary,
+ROW_NUMBER() OVER (ORDER BY salary DESC) AS employee_salary_ranked
+FROM employees
