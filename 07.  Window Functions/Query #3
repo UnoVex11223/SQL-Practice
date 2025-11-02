@@ -1,0 +1,11 @@
+Show the RANK() and DENSE_RANK() for all employees based on salary.
+
+Solution:
+
+SELECT
+first_name,
+last_name,
+salary,
+RANK() OVER (ORDER BY salary DESC) AS rank_of_salary,
+DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rank_of_salary
+FROM employees
