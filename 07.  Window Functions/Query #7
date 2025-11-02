@@ -1,1 +1,11 @@
+Show a list of all sales, grouped by employee and ordered by sale date. Include a running total of sale_amount for each employee.
 
+Solution:
+
+
+SELECT
+sale_id,
+emp_id,
+sale_date,
+SUM(sale_amount) OVER(PARTITION BY emp_id ORDER BY sale_date) AS running_total_sales_per_emnployee
+FROM sales
