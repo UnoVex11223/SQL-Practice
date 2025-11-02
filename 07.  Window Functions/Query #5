@@ -1,0 +1,9 @@
+Show each employee's name and the total number of employees in their department.
+
+Solution:
+
+SELECT
+CONCAT(first_name, " ", last_name) AS full_name,
+department,
+COUNT(emp_id) OVER (PARTITION BY department) as employees_per_department
+FROM employees
