@@ -1,0 +1,10 @@
+For each sale, show the sale_date and the sale_date of the next sale made by any employee.
+
+Solution:
+
+SELECT
+emp_id,
+sale_date,
+sale_amount,
+LEAD(sale_date,1) OVER(ORDER BY sale_date) as next_sale
+FROM sales
