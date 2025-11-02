@@ -1,0 +1,11 @@
+List all employees, their department, their salary, and their rank within their department based on salary (highest to lowest)
+
+Solution:
+
+SELECT
+first_name,
+last_name,
+department,
+salary,
+RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS employeed_salary_ranked_by_apartment
+FROM employees
