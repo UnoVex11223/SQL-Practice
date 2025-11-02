@@ -1,0 +1,10 @@
+Show each employee's name, salary, and the average salary for their department in a new column.
+
+Solution:
+
+SELECT
+CONCAT(first_name, " ", last_name) AS full_name,
+department,
+salary,
+ROUND(AVG(salary) OVER (PARTITION BY department), 2) AS average_salary_per_department
+FROM employees
