@@ -1,0 +1,11 @@
+For each sale, show the sale_amount and the sale_amount of the previous sale by that same employee. If it's their first sale, show 0.
+
+Solution:
+
+SELECT
+emp_id,
+sale_id,
+sale_date,
+sale_amount,
+LAG(sale_amount, 1, 0) OVER(PARTITION BY emp_id ORDER BY sale_date ASC) AS previous_sale
+FROM sales
