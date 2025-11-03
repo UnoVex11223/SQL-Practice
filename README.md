@@ -4,7 +4,7 @@ Welcome to my personal SQL portfolio. This repository is a living collection of 
 
 ## 🚧 How This Repository is Structured
 
-This portfolio is organized into folders, each corresponding to a core SQL concept. Inside each folder, you'll find `.sql` files with my solutions to various problems, demonstrating that concept in action.
+This portfolio is organized into folders, each corresponding to a core SQL concept. Inside each folder, you'll find files with my solutions to various problems, demonstrating that concept in action.
 
 ---
 
