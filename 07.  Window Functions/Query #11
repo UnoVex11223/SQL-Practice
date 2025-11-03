@@ -1,0 +1,13 @@
+For each sale, calculate a 3-day moving average of sale_amount. 
+This average should include the current day's sale and the sales from the two previous days.
+
+Solution:
+
+
+SELECT 
+
+sale_date, 
+
+AVG(sale_amount) OVER (ORDER BY sale_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS three_day_average
+
+FROM sales
