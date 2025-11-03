@@ -1,0 +1,7 @@
+Select the product_name from products, but remove all leading and trailing spaces.
+
+Solution:
+
+SELECT 
+TRIM(product_name) AS product_name
+FROM products
