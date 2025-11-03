@@ -1,0 +1,9 @@
+Divide all employees into 4 "quartiles" based on their salary. Show each employee's name and which quartile (1, 2, 3, or 4) they fall into.
+
+Solution:
+
+SELECT
+CONCAT(first_name, " ", last_name) AS full_name,
+salary,
+NTILE(4) OVER(ORDER BY salary DESC) quartile_salary
+FROM employees
