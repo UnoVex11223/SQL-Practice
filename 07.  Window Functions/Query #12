@@ -1,0 +1,19 @@
+Find the top 3 highest-paid employees in each department.
+
+Solution:
+
+WITH salary_ranked_by_department AS (
+SELECT
+department,
+CONCAT(first_name, " ", last_name) AS full_name,
+salary,
+RANK() OVER(PARTITION BY department ORDER BY salary DESC) AS ranked_salary_per_department
+FROM employees)
+
+SELECT 
+department,
+full_name,
+salary
+FROM salary_ranked_by_department
+WHERE ranked_salary_per_department <= 3
+ORDER BY department, ranked_salary_per_department
