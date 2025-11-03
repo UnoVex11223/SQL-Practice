@@ -1,0 +1,8 @@
+The total_amount in the sales table is a VARCHAR. Select the sale_id and the total_amount cast as a DECIMAL(10, 2)
+
+Solution:
+
+SELECT
+sale_id,
+CAST(TRIM(total_amount) AS DECIMAL(10,2)) AS total_amount
+FROM sales
