@@ -1,0 +1,8 @@
+Select the sale_id from sales and extract just the month (as a number) from the sale_date
+
+Solution:
+
+SELECT
+  sale_id,
+  EXTRACT(MONTH FROM sale_date) AS sale_month
+FROM sales;
