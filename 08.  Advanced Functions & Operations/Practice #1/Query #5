@@ -1,0 +1,7 @@
+Select the full_name and email from customers and concatenate them into a single string like: John Doe (john.doe@gmail.com)
+
+Solution:
+
+SELECT
+CONCAT(TRIM(full_name), ' ', CONCAT('(',email,')')) as name_email
+FROM customers
