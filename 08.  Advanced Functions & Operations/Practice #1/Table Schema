@@ -1,0 +1,55 @@
+-- Create the tables
+
+CREATE TABLE `customers` (
+  `customer_id` INT PRIMARY KEY,
+  `full_name` VARCHAR(100),
+  `email` VARCHAR(100),
+  `phone` VARCHAR(25),
+  `registration_date` DATE,
+  `location` VARCHAR(50)
+);
+
+CREATE TABLE `products` (
+  `product_id` INT PRIMARY KEY,
+  `product_name` VARCHAR(100),
+  `product_sku` VARCHAR(50),
+  `category` VARCHAR(50),
+  `price` DECIMAL(10, 2)
+);
+
+CREATE TABLE `sales` (
+  `sale_id` INT PRIMARY KEY,
+  `product_id` INT,
+  `customer_id` INT,
+  `sale_date` DATETIME,
+  `quantity_sold` INT,
+  `total_amount` VARCHAR(50), -- Intentionally VARCHAR for casting practice
+  FOREIGN KEY (product_id) REFERENCES products(product_id),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
+);
+
+-- Insert sample data
+
+INSERT INTO `customers` VALUES
+(1, '  John Doe  ', 'john.doe@gmail.com', '(555) 123-4567', '2022-01-15', 'New York'),
+(2, 'Jane Smith', 'jane.smith@yahoo.com', '555-987-6543', '2021-11-30', 'CA'),
+(3, 'Robert Brown', 'rob.brown@hotmail.com', '555 555 5555', '2023-05-20', 'TX '),
+(4, 'Emily Davis', 'emily.d@gmail.com', '1-555-321-7654', '2023-09-01', 'ca'),
+(5, 'Michael Wilson', 'mike.wilson@aol.com', ' (555) 888-9999 ', '2020-07-12', 'New York');
+
+INSERT INTO `products` VALUES
+(101, '   Laptop Pro 15" ', 'ELEC-LP-1001', 'Electronics', 1200.00),
+(102, 'Coffee Maker v2', 'HOME-CM-1002', 'Home Goods', 80.00),
+(103, 'Men\'s Running Shoes', 'APP-RS-1003', 'Apparel', 110.50),
+(104, 'Wireless Mouse (Promo)', 'ELEC-WM-1004', 'Electronics', 25.99),
+(105, 'Organic Coffee Beans', 'FOOD-CB-1005', 'Food & Bev', 18.00);
+
+INSERT INTO `sales` VALUES
+(1001, 101, 1, '2023-10-25 09:30:00', 1, '1200.00'),
+(1002, 102, 2, '2023-10-25 10:15:00', 2, '160.00'),
+(1003, 103, 1, '2023-11-01 14:22:00', 1, '110.50'),
+(1004, 104, 3, '2023-11-02 11:00:00', 1, '25.99'),
+(1005, 105, 4, '2023-11-05 17:45:00', 5, '90.00'),
+(1006, 101, 2, '2023-11-10 08:10:00', 1, '1200.00'),
+(1007, 102, 5, '2022-05-15 12:00:00', 1, ' 75.00 '), -- Note the space
+(1008, 104, 1, '2023-01-15 15:30:00', 2, '51.98');
