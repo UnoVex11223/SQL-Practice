@@ -1,0 +1,20 @@
+Show each employee's name, salary, and what percentage their salary is of their department's total salary.
+
+Solution:
+
+WITH total_salary AS (
+SELECT 
+CONCAT(first_name, " ", last_name) AS full_name,
+salary,
+department,
+SUM(salary) OVER(PARTITION BY department) AS total_salary_per_department
+FROM employees
+)
+
+
+SELECT 
+full_name,
+ROUND((salary / total_salary_per_department *(100)), 2) AS total_salary_department_perc,
+department
+FROM total_salary
+ORDER BY department, total_salary_department_perc DESC
