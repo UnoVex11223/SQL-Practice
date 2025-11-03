@@ -1,0 +1,10 @@
+Show each employee's name, department, salary, and the name of the highest-paid employee in their department.
+
+Solution:
+
+SELECT
+CONCAT(first_name, " ", last_name) AS full_name,
+department,
+salary,
+FIRST_VALUE(CONCAT(first_name, " ", last_name)) OVER(PARTITION BY department ORDER BY salary DESC) AS highes_paid_employee_per_department
+FROM employees
