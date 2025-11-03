@@ -1,0 +1,13 @@
+Select all customer full_names and add a new column location_group that says 'East Coast' for 'New York' and 'West Coast' for 'CA'.
+
+Solution:
+
+SELECT
+  full_name,
+  location,
+  CASE
+    WHEN TRIM(UPPER(location)) = 'NEW YORK' THEN 'East Coast'
+    WHEN TRIM(UPPER(location)) = 'CA' THEN 'West Coast'
+    ELSE location
+	END AS location_group
+FROM customers;
