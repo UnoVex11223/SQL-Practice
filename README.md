@@ -49,7 +49,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * Aggregate Functions: `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()`
 * `HAVING` (Filtering groups)
 
-### 05. 🔗 Joins & Unions
+### 05. Joins & Unions
 
 *The core of relational SQL: combining data from multiple tables.*
 
