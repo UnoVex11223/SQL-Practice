@@ -1,8 +1,8 @@
-# 🚀 My Data Engineering SQL Portfolio
+# My Data Engineering SQL Portfolio
 
 Welcome to my personal SQL portfolio. This repository is a living collection of my work, designed to practice and showcase my proficiency in the SQL skills essential for data engineering.
 
-## 🚧 How This Repository is Structured
+## How This Repository is Structured
 
 This portfolio is organized into folders, each corresponding to a core SQL concept. Inside each folder, you'll find files with my solutions to various problems, demonstrating that concept in action.
 
@@ -10,7 +10,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 
 ## 📚 Core SQL Concepts for Data Engineering
 
-### 01. 💡 SQL Basics & Querying
+### 01. SQL Basics & Querying
 
 *The fundamental building blocks for retrieving and filtering data.*
 
@@ -22,7 +22,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * Logical Operators (`AND`, `OR`, `NOT`, `IN`, `BETWEEN`, `LIKE`)
 * `NULL` Handling (`IS NULL`, `IS NOT NULL`, `COALESCE`)
 
-### 02. 🏛️ Data Definition Language (DDL)
+### 02. Data Definition Language (DDL)
 
 *Commands for building and managing the database's structure.*
 
@@ -33,7 +33,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * `DROP TABLE` & `TRUNCATE TABLE`
 * `CREATE VIEW` / `DROP VIEW`
 
-### 03. ✏️ Data Manipulation Language (DML)
+### 03. Data Manipulation Language (DML)
 
 *Commands for interacting with the data inside the tables.*
 
@@ -41,7 +41,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * `UPDATE`
 * `DELETE`
 
-### 04. 📊 Aggregations & Grouping
+### 04. Aggregations & Grouping
 
 *Summarizing data to find insights.*
 
@@ -60,7 +60,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * `UNION` / `UNION ALL`
 * `INTERSECT` / `EXCEPT`
 
-### 06.  nesting.md Subqueries & CTEs
+### 06. Subqueries & CTEs
 
 *Techniques for breaking down complex problems into logical, readable steps.*
 
@@ -72,7 +72,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
     * `WITH ... AS (...)`
     * Recursive CTEs (for hierarchical data)
 
-### 07. 🖼️ Window Functions
+### 07. Window Functions
 
 *Performing calculations across sets of rows, without collapsing them.*
 
@@ -81,7 +81,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * **Analytic:** `LAG()`, `LEAD()`
 * **Aggregate:** `SUM() OVER (...)`, `AVG() OVER (...)` (e.g., for running totals)
 
-### 08. 🛠️ Advanced Functions & Operations
+### 08. Advanced Functions & Operations
 
 *Tools for complex data cleaning, transformation, and conditional logic.*
 
@@ -91,7 +91,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * **String:** `CONCAT()`, `SUBSTRING()`, `TRIM()`, `REPLACE()`
 * **Type Casting:** `CAST(...)` or `::`
 
-### 09. 🎛️ Procedural SQL & Automation
+### 09. Procedural SQL & Automation
 
 *Writing programmatic logic (scripts, functions, and procedures) in SQL.*
 
@@ -99,7 +99,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * `CREATE FUNCTION` (User-Defined Functions - UDFs)
 * Variables, loops, and control flow (e.g., `IF`/`ELSE`)
 
-### 10. ⚡ Performance & Optimization
+### 10. Performance & Optimization
 
 *Understanding *how* queries run and making them faster and more efficient.*
 
@@ -109,7 +109,7 @@ This portfolio is organized into folders, each corresponding to a core SQL conce
 * **Materialized Views:** Pre-calculating results
 * Query Anti-Patterns (and how to fix them)
 
-### 11. 🔒 Transactions & Data Control
+### 11. Transactions & Data Control
 
 *Ensuring data integrity, consistency, and security.*
 
