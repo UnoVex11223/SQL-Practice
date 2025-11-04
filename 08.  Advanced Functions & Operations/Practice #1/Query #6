@@ -1,0 +1,14 @@
+Select the location from customers. First, trim spaces and convert to uppercase. Then, use a CASE statement to show 'California' for 'CA', 'New York' for 'NEW YORK', and 'Texas' for 'TX'.
+
+Solution:
+
+SELECT
+customer_id,
+TRIM(full_name) AS full_name,
+CASE 
+WHEN TRIM(UPPER(location)) = 'CA' THEN 'California'
+WHEN TRIM(UPPER(location)) = 'NEW YORK' THEN 'New York'
+WHEN TRIM(UPPER(location)) = 'TX' THEN 'Texas'
+ELSE TRIM(location) END AS location
+FROM customers
+
