@@ -1,0 +1,15 @@
+The phone numbers in customers are messy. Select the full_name and phone, but use REPLACE to remove all dashes '-', spaces ' ', and parentheses '(' and ')'
+
+Solution:
+
+SELECT
+TRIM(full_name) AS full_name,
+REPLACE(REPLACE(REPLACE(REPLACE(phone, '-',''), ' ', ''), '(', ''), ')', '') AS phone_number
+FROM customers
+
+The readable Version:
+
+SELECT
+TRIM(full_name) AS full_name,
+REGEXP_REPLACE(phone, '[() -]', '') AS phone_number
+FROM customers
