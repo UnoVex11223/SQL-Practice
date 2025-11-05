@@ -1,0 +1,7 @@
+The product_sku has a numeric ID at the end (e.g., 'ELEC-LP-1001'). Substring the last 4 characters and cast them as an INTEGER
+
+Solution:
+
+SELECT
+CAST(RIGHT(product_sku, 4) AS SIGNED INTEGER) AS numeric_id
+FROM products
