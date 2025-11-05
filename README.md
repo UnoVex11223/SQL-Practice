@@ -1,6 +1,6 @@
 # My Data Engineering SQL Portfolio
 
-Welcome to my personal SQL portfolio. This repository is a living collection of my work, designed to practice and showcase my proficiency in the SQL skills essential for data engineering.
+Welcome to my personal SQL portfolio. This repository is a living collection of my work, designed to practice and showcase my proficiency in the SQL skills.
 
 ## How This Repository is Structured
 
