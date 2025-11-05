@@ -1,0 +1,10 @@
+Get the total sales amount (total_amount) grouped by the calendar month.
+
+Solution:
+
+SELECT
+SUM(CAST(TRIM(total_amount) AS DECIMAL(10, 2))) AS total_monthly_sales,
+DATE_FORMAT(sale_date, '%Y-%m-01') AS sales_month
+FROM sales
+GROUP BY sales_month
+ORDER BY sales_month
