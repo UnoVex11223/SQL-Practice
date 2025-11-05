@@ -1,0 +1,13 @@
+Select the sale_id and create a sales_period column. Use a CASE statement on the extracted hour from sale_date to show 'Morning' (before 12), 'Afternoon' (12-17), or 'Evening' (after 17)
+
+Solution:
+
+SELECT
+sale_id,
+CASE 
+WHEN EXTRACT(HOUR FROM sale_date) < 12 THEN 'Morning'
+WHEN EXTRACT(HOUR FROM sale_date) BETWEEN 12 AND 17 THEN 'Afternoon'
+WHEN EXTRACT(HOUR FROM sale_date) > 17 THEN 'Evening'
+ELSE NULL
+END AS sales_period
+FROM sales
