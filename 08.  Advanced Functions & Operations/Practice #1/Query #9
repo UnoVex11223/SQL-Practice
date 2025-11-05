@@ -1,0 +1,15 @@
+Count the number of products in each price_tier. The tiers are: 'Low' (price < 50), 'Medium' (price 50 - 150), and 'High' (price > 150)
+
+Solution:
+
+SELECT
+  CASE
+    WHEN price < 50 THEN 'Low'
+    WHEN price >= 50 AND price <= 150 THEN 'Medium'
+    WHEN price > 150 THEN 'High'
+  END AS price_tier,
+  COUNT(*) AS product_count
+FROM
+  products
+GROUP BY
+  price_tier;
