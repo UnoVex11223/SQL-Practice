@@ -1,0 +1,8 @@
+Select the email from customers
+
+Solution:
+
+SELECT 
+customer_id,
+SUBSTRING_INDEX(TRIM(email), '@', -1) AS domain_name
+FROM customers
