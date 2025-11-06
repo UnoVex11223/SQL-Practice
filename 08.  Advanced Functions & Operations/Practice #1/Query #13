@@ -1,0 +1,8 @@
+Find out how many days each customer has been registered. The result should show full_name and days_as_customer
+
+Solution:
+
+SELECT
+TRIM(full_name) AS full_name,
+DATEDIFF(CURDATE(), registration_date) AS days_registered
+FROM customers
