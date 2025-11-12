@@ -1,0 +1,16 @@
+Show the total quantity_sold for each product_id, but pivot the customer_ids. Show product_id and then separate columns: cust_1_qty, cust_2_qty, etc. (Use SUM and CASE).
+
+Solution:
+
+SELECT
+  product_id,
+  SUM(CASE WHEN customer_id = 1 THEN quantity_sold ELSE 0 END) AS cust_1_qty,
+  SUM(CASE WHEN customer_id = 2 THEN quantity_sold ELSE 0 END) AS cust_2_qty,
+  SUM(CASE WHEN customer_id = 3 THEN quantity_sold ELSE 0 END) AS cust_3_qty,
+  SUM(CASE WHEN customer_id = 4 THEN quantity_sold ELSE 0 END) AS cust_4_qty,
+  SUM(CASE WHEN customer_id = 5 THEN quantity_sold ELSE 0 END) AS cust_5_qty
+FROM sales
+GROUP BY
+  product_id
+ORDER BY
+  product_id;
