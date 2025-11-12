@@ -1,0 +1,10 @@
+Select the full_name of customers. Use SUBSTRING to get only their first name (assume first name is up to the first space). Then concatenate it with their registration year (e.g., 'John joined in 2022')
+
+Solution:
+
+WITH cleaned_values AS (
+SELECT TRIM(full_name) as full_name, EXTRACT(YEAR FROM registration_date) as year
+FROM customers)
+
+SELECT CONCAT(SUBSTRING_INDEX(full_name, ' ', 1), ' registered in ', year) AS registration_year
+FROM cleaned_values
